@@ -53,3 +53,65 @@ type statusCode = 'active' | 'inactive'
 
 let studentStatus:statusCode = 'inactive';
 
+// Any
+
+let working: any = 35 // No es una buena practica
+working = 'hola';
+
+// Funciones
+
+// function nombreFunction (parámetro: tipoDato): tipoDato Que Retorna función
+function validateValue(value:unknown): boolean {
+
+    // unknown que es un tipo de dato que es desconocido
+    // para cualquier validación que deba hacer con el dato
+    // debo primero saber o validar que tipo de dato es
+    if(typeof value === 'string'){
+        console.log(value.trim().toUpperCase())
+    }else if (typeof value === 'number'){
+        console.log(value.toFixed());
+    }
+
+    if(value === ''){
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function getFullName (firstName: string, lastName: string): string {
+    return `${firstName} ${lastName}`;
+}
+
+console.log(getFullName(firstName, lastName));
+
+// Void
+
+function processResponse(saved: boolean): void {
+
+}
+
+enum Role{
+    Admin,
+    Client,
+    Users,
+    SuperAdmin
+}
+let users: Array< {name: string, role: Role} > = [
+    {
+        name:'pepito',
+        role: Role.Admin
+    },
+    {
+        name: 'juanito',
+        role: Role.Client
+    },
+    {
+        name: 'panda',
+        role: Role.Client
+    }
+]
+
+console.log( users.filter((user) => user.role === Role.Client));
+
+
