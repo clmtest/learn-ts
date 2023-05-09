@@ -66,12 +66,13 @@ class Auto2 {
         console.log('apagando')
     }
 
-    private encender(){
+    private encender(){ // Solo la podemos acceder desde la clase. 
         console.log(`Bienvenido ${this.marca}, tu color es: ${this.color}, tu peso es: ${this.peso} y tienes ${this.puertas} puertas`)
     }
 }
 
 let ford = new Auto2(500, 'ford')
 console.log(ford)
-ford.apagar() // Llamar al metodo por fuera 
+ford.apagar() // Llamar al método por fuera 
+
 
