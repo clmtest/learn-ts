@@ -1,20 +1,20 @@
 import { IPersona } from './ipersona_poo';
 
 export class Hombre implements IPersona{
-    nombre: string;
-    apellido: string;
-    edad!: number;
+    public nombre: string;
+    public apellido: string;
+    public edad!: number;
     
     constructor(nombre?:string, apellido?:string){
-        this.nombre = nombre ?? ''
-        this.apellido = apellido ?? ''
+        this.nombre = nombre ?? '';
+        this.apellido = apellido ?? '';
     }
 
-    nombre_completo(): string {
-        return this.nombre, this.apellido
+    public nombre_completo(): string {
+        return `${this.nombre} ${this.apellido}`
     }
 
-    hablar_futbol(equipo:string,minutos:number):void{
+    public hablar_futbol(equipo:string,minutos:number):void{
         console.log(`Hablemos sobre el ${equipo} ${minutos} pues esta jugando como los Dioses`)
     }
 }
